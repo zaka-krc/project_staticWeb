@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #f4f4f4;
+    background-color: #1c1c1c;
+    line-height: 1.6;
+  }
+  
+  h1, h2 {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+  }
+  
+  a {
+    color: #f39c12;
+    text-decoration: none;
+  }
+  
+  .navigatie {
+    background-color: black;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    z-index: 1000;
+}
+
+.navigatie ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #fff;
+
+}
+
+
+.navigatie a {
+    display: block;
+    background: black;
+    color: white;
+    padding: 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.5s;
+}
+
+.navigatie a:hover {
+    background: #efefef;
+    color: #000;
+}
+
+  
+  .title {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .header h1 {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    font-size: 3rem;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 40px;
+  }
+  
+  section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #f39c12;
+    border-bottom: 2px solid #444;
+    padding-bottom: 5px;
+  }
+  
+  section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  section ul li {
+    margin-bottom: 10px;
+  }
+  
+  section ul li::before {
+    content: "• ";
+    color: #f39c12;
+  }
+  
+  section p {
+    color: #ddd;
+  }
+  
+  .trailer iframe {
+    width: 100%;
+    max-width: 720px;
+    height: 405px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    margin-top: 10px;
+  }
+  
+  .related-films ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .related-films ul li {
+    flex: 1;
+    min-width: 200px;
+    background: #2a2a2a;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  footer {
+    background: #111;
+    color: #888;
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #444;
+    font-size: 0.9rem;
+  }
+  

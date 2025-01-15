@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La La Land</title>
+  <link rel="stylesheet" href="css/filmsadmin.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navigatie">
+      <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="#">Over ons</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="search-bar">
+        <form>
+          <input type="text" placeholder="Search..." id="search" />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <div class="title">
+    <form>
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" value="La La Land">
+    </form>
+  </div>
+
+  <main class="container">
+    <form>
+      <section class="film-info">
+        <h2>General Info</h2>
+        <ul>
+          <li>
+            <label for="director">Director:</label>
+            <input type="text" id="director" name="director" value="Damien Chazelle">
+          </li>
+          <li>
+            <label for="release-date">Release date:</label>
+            <input type="date" id="release-date" name="release-date" value="2016-12-09">
+          </li>
+          <li>
+            <label for="duration">Duration:</label>
+            <input type="text" id="duration" name="duration" value="2h 8min">
+          </li>
+          <li>
+            <label for="genres">Genres:</label>
+            <input type="text" id="genres" name="genres" value="Drama, Musical, Romance">
+          </li>
+          <li>
+            <label for="writers">Writers:</label>
+            <input type="text" id="writers" name="writers" value="Damien Chazelle">
+          </li>
+          <li>
+            <label for="rating">IMDB Rating:</label>
+            <input type="text" id="rating" name="rating" value="8.0/10">
+          </li>
+        </ul>
+      </section>
+
+      <section class="trailer">
+        <h2>Watch Trailer</h2>
+        <label for="trailer-url">YouTube Link:</label>
+        <input type="url" id="trailer-url" name="trailer-url" value="https://www.youtube.com/embed/0pdqf4P9MB8">
+        <iframe src="https://www.youtube.com/embed/0pdqf4P9MB8" 
+          title="La La Land Trailer" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </section>
+
+      <section class="summary">
+        <h2>Summary</h2>
+        <label for="summary-text">Summary:</label>
+        <textarea id="summary-text" name="summary-text" rows="4">
+Mia, an aspiring actress, serves lattes to movie stars in between auditions, and Sebastian, a jazz musician,
+scrapes by playing cocktail party gigs in dingy bars. But as success mounts, they face decisions that begin to
+fray the fragile fabric of their love affair, and the dreams they worked so hard to maintain in each other
+threaten to rip them apart.
+        </textarea>
+      </section>
+
+      <section class="top-cast">
+        <h2>Top Cast</h2>
+        <ul>
+          <li>
+            <label for="cast1">Actor 1:</label>
+            <input type="text" id="cast1" name="cast1" value="Ryan Gosling as Sebastian">
+          </li>
+          <li>
+            <label for="cast2">Actor 2:</label>
+            <input type="text" id="cast2" name="cast2" value="Emma Stone as Mia">
+          </li>
+          <li>
+            <label for="cast3">Actor 3:</label>
+            <input type="text" id="cast3" name="cast3" value="John Legend as Keith">
+          </li>
+          <li>
+            <label for="cast4">Actor 4:</label>
+            <input type="text" id="cast4" name="cast4" value="Rosemarie DeWitt as Laura">
+          </li>
+          <li>
+            <label for="cast5">Actor 5:</label>
+            <input type="text" id="cast5" name="cast5" value="...">
+          </li>
+        </ul>
+      </section>
+
+      <section class="related-films">
+        <h2>More Like This</h2>
+        <ul>
+          <li>
+            <label for="related1">Film 1:</label>
+            <input type="text" id="related1" name="related1" value="The Greatest Showman">
+          </li>
+          <li>
+            <label for="related2">Film 2:</label>
+            <input type="text" id="related2" name="related2" value="Whiplash">
+          </li>
+          <li>
+            <label for="related3">Film 3:</label>
+            <input type="text" id="related3" name="related3" value="A Star is Born">
+          </li>
+          <li>
+            <label for="related4">Film 4:</label>
+            <input type="text" id="related4" name="related4" value="Moulin Rouge!">
+          </li>
+        </ul>
+      </section>
+
+      <button type="submit">Save Changes</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Film Fanatics. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>

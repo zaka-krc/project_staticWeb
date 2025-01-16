@@ -1,38 +1,48 @@
 <!DOCTYPE html>
-<html lang="nl">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="css/login.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Film Reviews</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
 </head>
-
 <body>
-  <div class="login-container">
-    <h2>Login</h2>
-    <form class="login-form">
-      <label for="username">Login:</label>
-      <input type="text" id="username" name="username" required>
+    <nav class="navigatie">
+        <ul>
+            <li><a href="homepage.html">HOME</a></li>
+            <li><a href="#" class="active">MOVIES</a></li>
+            <li><a href="#">ABOUT</a></li>
+        </ul>
+    </nav>
 
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
+    <main class="login-wrapper">
+        <div class="login-container">
+            <h1>Login</h1>
+            <form class="login-form">
+                <div class="form-field">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username">
+                </div>
 
-      <button type="submit">Login</button>
+                <div class="form-field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password">
+                </div>
 
-      <div class="options">
-        <a href="#" class="forgot-password">Forgotten password?</a>
-        <a href="#" class="register-button">Make an account!</a>
-      </div>
-    </form>
-  </div>
+                <button type="submit" class="sign-in-btn">Sign In</button>
 
-  <footer>
-    <p>&copy; 2025 </p>
-  </footer>
+                <a href="#" class="forgot-link">Forgot your password?</a>
+
+                <div class="create-account">
+                    <a href="#">Create new account</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Film Reviews</p>
+    </footer>
 </body>
-
-</body>
-
 </html>

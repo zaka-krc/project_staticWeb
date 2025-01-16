@@ -1,3 +1,7 @@
+html {
+  height: 100%;
+}
+
 body {
   font-size: large;
   margin: 0;
@@ -5,12 +9,19 @@ body {
   color: #f4f4f4;
   background-color: #1c1c1c;
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
   color: lightblue;
   margin-top: 0;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 a {
@@ -32,7 +43,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   padding: 0;
-  z-index: 1000;
+  z-index: 1;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -41,7 +52,6 @@ a:hover {
   padding: 0;
   display: flex;
   flex-direction: column;
-  list-style: none;
 }
 
 .navigatie li {
@@ -97,31 +107,32 @@ a:hover {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /*element exact midden centreren.*/
   text-align: center;
   width: 100%;
 }
 
 .title h1 {
-  font-size: 3.5rem;
+  font-size: 3.5em;
   margin: 0;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 .rating {
-  margin-top: 1rem;
-  font-size: 1.5rem;
+  margin-top: 1em;
+  font-size: 1.5em;
 }
 
 .star {
   color: rgb(246, 246, 186);
-  margin-right: 0.5rem;
+  margin-right: 0.5em;
 }
 
 .container {
   max-width: 1200px;
   margin: 40px auto;
   padding: 0 30px;
+  margin-left: 220px;
 }
 
 section {
@@ -140,7 +151,6 @@ section h2 {
 }
 
 section ul {
-  list-style: none;
   padding: 0;
 }
 
@@ -179,7 +189,7 @@ section ul li {
 }
 
 .review-score {
-  font-size: 2rem;
+  font-size: 2em;
   font-weight: bold;
   color: lightblue;
   margin-right: 20px;
@@ -190,13 +200,13 @@ section ul li {
 
 .review-header h3 {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 1.8em;
   display: flex;
 }
 
 .related-films ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /*gelijkmatige gridkolommen maken met flexibele breedte*/
   gap: 20px;
 }
 
@@ -214,38 +224,34 @@ section ul li {
 }
 
 footer {
-  position: relative;
-  bottom: 0;
-  right: 0;
-  left: 200px;
+  margin-top: auto;
   background: #111;
   color: #3d3d3d;
   text-align: center;
   padding: 15px;
-  font-size: 12px;
-  width: auto;
+  margin-left: 220px;
+  flex-shrink: 0;
 }
 
-@media (max-width: 768px) {
+/*Responsive: Door Chat-GPT, voor tablets en mobiele devices*/
+
+@media (max-width: 1024px) {
   .navigatie {
       width: 180px;
   }
   
   .banner,
-  .container {
+  .container,
+  footer {
       margin-left: 180px;
   }
   
-  footer {
-      left: 180px;
-  }
-  
   .title h1 {
-      font-size: 2rem;
+      font-size: 2.5em;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .navigatie {
       position: static;
       width: 100%;
@@ -253,22 +259,44 @@ footer {
   }
   
   .banner,
-  .container {
+  .container,
+  footer {
       margin-left: 0;
   }
   
-  footer {
-      position: relative;
-      left: 0;
+  .title h1 {
+      font-size: 2em;
   }
   
   .dropdown-content {
       position: static;
       width: 100%;
   }
+}
+
+@media (max-width: 480px) {
+  body {
+      font-size: 16px;
+  }
   
-  .actions {
-      display: flex;
-      gap: 5px;
+  .container {
+      padding: 15px;
+  }
+  
+  .title h1 {
+      font-size: 1.8em;
+  }
+  
+  section {
+      padding: 20px;
+  }
+  
+  .review-header {
+      flex-direction: column;
+      text-align: center;
+  }
+  
+  .review-score {
+      margin: 0 0 15px 0;
   }
 }

@@ -1,3 +1,7 @@
+html {
+    height: 100%;
+}
+
 body {
     font-size: large;
     margin: 0;
@@ -5,12 +9,19 @@ body {
     color: #f4f4f4;
     background-color: #1c1c1c;
     line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
     color: lightblue;
     margin-top: 0;
+}
+
+main {
+    flex: 1 0 auto;
 }
 
 .navigatie {
@@ -23,7 +34,7 @@ h1, h2, h3 {
     display: flex;
     flex-direction: column;
     padding: 0;
-    z-index: 1000;
+    z-index: 1;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -32,7 +43,6 @@ h1, h2, h3 {
     padding: 0;
     display: flex;
     flex-direction: column;
-    list-style: none;
 }
 
 .navigatie li {
@@ -119,9 +129,9 @@ h1, h2, h3 {
 }
 
 .title h1 {
-    font-size: 2.5rem;
+    font-size: 2.5em;
     margin: 0;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 0 10px rgba(0, 0, 0, 0.8);
 }
 
 .container {
@@ -171,6 +181,7 @@ table {
     border-collapse: collapse;
     background: #2a2a2a;
     border-radius: 4px;
+    margin-bottom: 20px;
 }
 
 th, td {
@@ -225,38 +236,76 @@ tr:hover {
     background: #ff6666;
 }
 
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 5px;
+}
+
+.page-btn {
+    padding: 8px 15px;
+    background: #111;
+    color: #f4f4f4;
+    border: 1px solid #3d3d3d;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    min-width: 40px;
+}
+
+.page-btn:hover {
+    background: #3d3d3d;
+    border-color: lightblue;
+}
+
+.page-btn.active {
+    background: lightblue;
+    color: #111;
+    border-color: lightblue;
+}
+
+.page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #222;
+}
+
 footer {
-    position: relative;
-    bottom: 0;
-    right: 0;
-    left: 200px;
+    margin-top: auto;
     background: #111;
     color: #3d3d3d;
     text-align: center;
     padding: 15px;
-    font-size: 12px;
+    margin-left: 220px;
+    flex-shrink: 0;
 }
 
-@media (max-width: 768px) {
+/*Responsive: Door Chat-GPT, voor tablets en mobiele devices*/
+
+@media (max-width: 1024px) {
     .navigatie {
         width: 180px;
     }
     
     .banner,
-    .container {
+    .container,
+    footer {
         margin-left: 180px;
     }
     
-    footer {
-        left: 180px;
-    }
-    
     .title h1 {
-        font-size: 2rem;
+        font-size: 2em;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .navigatie {
         position: static;
         width: 100%;
@@ -264,13 +313,9 @@ footer {
     }
     
     .banner,
-    .container {
-        margin-left: 0;
-    }
-    
+    .container,
     footer {
-        position: relative;
-        left: 0;
+        margin-left: 0;
     }
     
     .dropdown-content {
@@ -278,8 +323,42 @@ footer {
         width: 100%;
     }
     
+    .movie-table {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    section {
+        padding: 20px;
+    }
+    
+    .pagination {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .page-numbers {
+        order: -1;
+    }
+    
+    .page-btn {
+        padding: 10px 15px;
+    }
+    
     .actions {
         display: flex;
+        flex-direction: column;
         gap: 5px;
+    }
+    
+    .edit-btn,
+    .delete-btn {
+        width: 100%;
+        margin: 2px 0;
     }
 }

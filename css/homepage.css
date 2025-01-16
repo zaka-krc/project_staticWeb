@@ -1,3 +1,7 @@
+html {
+    height: 100%;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     font-size: large;
@@ -7,11 +11,18 @@ body {
     color: #f4f4f4;
     background-color: #1c1c1c;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
     color: lightblue;
+    margin-top: 0;
+}
+
+main {
+    flex: 1 0 auto;
 }
 
 .navigatie {
@@ -24,23 +35,22 @@ h1, h2, h3 {
     display: flex;
     flex-direction: column;
     padding: 0;
-    z-index: 1000;
+    z-index: 1;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  .navigatie ul {
+}
+
+.navigatie ul {
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    list-style: none;
-  }
-  
-  .navigatie li {
+}
+
+.navigatie li {
     position: relative;
-  }
-  
-  .navigatie a {
+}
+
+.navigatie a {
     display: block;
     background: #111;
     color: #f4f4f4;
@@ -48,33 +58,34 @@ h1, h2, h3 {
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1px;
-  }
-  
-  .navigatie a:hover {
+    transition: all 0.3s ease;
+}
+
+.navigatie a:hover {
     background: lightblue;
     color: #111;
     padding-left: 1.5em;
-  }
-  
-  .dropdown-content {
+}
+
+.dropdown-content {
     display: none;
-    background-color: black;
+    background-color: #111;
     min-width: 200px;
     position: absolute;
     left: 100%;
     top: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .dropdown-content a {
+}
+
+.dropdown-content a {
     padding: 1em 1.5em;
     font-size: 0.9em;
     border-bottom: 1px solid #3d3d3d;
-  }
-  
-  .dropdown:hover .dropdown-content {
+}
+
+.dropdown:hover .dropdown-content {
     display: block;
-  }
+}
 
 .intro {
     text-align: center;
@@ -90,36 +101,48 @@ h1, h2, h3 {
     font-size: 2.5em;
 }
 
+.intro p {
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
 .filmgrid {
     padding: 30px;
     text-align: center;
     margin-left: 220px;
-    background-color: black;
+    background-color: #111;
+}
+
+.filmgrid h2 {
+    margin-bottom: 30px;
 }
 
 .grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    /*chat-gpt hier gebruikt voor de grid */
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 figure {
-    width: 240px;
-    text-align: center;
     background: #2a2a2a;
-    border: 1px solid #444;
+    border: 1px solid #3d3d3d;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    margin: 0;
 }
 
 figure:hover {
-    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
-    border-color: lightblue
+    box-shadow: 0 4px 15px rgba(173, 216, 230, 0.2);
+    border-color: lightblue;
+    /*chat-gpt: doet de figuur naar boven bewegen met 5px*/
+    transform: translateY(-5px);
 }
 
 figure a {
@@ -129,10 +152,10 @@ figure a {
 
 figure img {
     width: 100%;
-    height: 320px;
+    height: 400px;
     object-fit: cover;
     display: block;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid #3d3d3d;
 }
 
 figcaption {
@@ -152,61 +175,90 @@ figcaption p {
 }
 
 footer {
-    position: relative;
-    bottom: 0;
-    right: 0;
-    left: 200px;
-    background: black;
+    margin-top: auto;
+    background: #111;
     color: #3d3d3d;
     text-align: center;
     padding: 15px;
-    font-size: 12px;
+    margin-left: 220px;
+    flex-shrink: 0;
 }
 
-/* Chat GPT hulp voor de responsiviteit */
-@media (max-width: 768px) {
+/*Responsive: Door Chat-GPT, voor tablets en mobiele devices*/
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    figure img {
+        height: 350px;
+    }
+
     .navigatie {
         width: 180px;
     }
-    
-    .banner,
-    .container {
-        margin-left: 180px;
-    }
-    
+
+    .filmgrid,
+    .intro,
     footer {
-        left: 180px;
-    }
-    
-    .title h1 {
-        font-size: 2rem;
+        margin-left: 180px;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .navigatie {
         position: static;
         width: 100%;
         height: auto;
     }
-    
-    .banner,
-    .container {
-        margin-left: 0;
+
+    .navigatie ul {
+        flex-direction: column;
     }
-    
-    footer {
-        position: relative;
-        left: 0;
-    }
-    
+
     .dropdown-content {
         position: static;
         width: 100%;
+        box-shadow: none;
     }
-    
-    .actions {
-        display: flex;
-        gap: 5px;
+
+    .intro,
+    .filmgrid,
+    footer {
+        margin-left: 0;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+
+    figure img {
+        height: 300px;
+    }
+
+    .intro {
+        padding: 30px 20px;
+    }
+
+    .intro h1 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+
+    .grid {
+        padding: 10px;
+        gap: 15px;
+    }
+
+    figure img {
+        height: 250px;
     }
 }

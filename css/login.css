@@ -1,3 +1,6 @@
+html {
+  height: 100%;
+}
 body {
   margin: 0;
   padding: 0;
@@ -5,10 +8,10 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: black;
   color: white;
-  display: flex;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-
 .navigatie {
   background-color: #111;
   position: fixed;
@@ -19,22 +22,18 @@ body {
   display: flex;
   flex-direction: column;
   padding: 0;
-  z-index: 1000;
+  z-index: 1;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
 }
-
 .navigatie ul {
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  list-style: none;
 }
-
 .navigatie li {
   position: relative;
 }
-
 .navigatie a {
   display: block;
   background: #111;
@@ -44,13 +43,11 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
 .navigatie a:hover {
   background: lightblue;
   color: #111;
   padding-left: 1.5em;
 }
-
 .dropdown-content {
   display: none;
   background-color: black;
@@ -60,27 +57,25 @@ body {
   top: 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 .dropdown-content a {
   padding: 1em 1.5em;
   font-size: 0.9em;
   border-bottom: 1px solid #3d3d3d;
 }
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
-
+main {
+  flex: 1 0 auto;
+}
 .login-wrapper {
   flex: 1;
-  margin-left: 200px;
+  margin-left: 220px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
 }
-
 .login-container {
   width: 100%;
   max-width: 400px;
@@ -88,7 +83,6 @@ body {
   border-radius: 4px;
   padding: 40px;
 }
-
 h1 {
   color: lightblue;
   font-size: 24px;
@@ -96,18 +90,15 @@ h1 {
   text-align: center;
   font-family: 'Playfair Display', serif;
 }
-
 .form-field {
   margin-bottom: 20px;
 }
-
 label {
   display: block;
   margin-bottom: 8px;
   color: white;
   font-size: 14px;
 }
-
 input {
   width: 100%;
   padding: 12px;
@@ -118,16 +109,13 @@ input {
   font-size: 14px;
   box-sizing: border-box;
 }
-
 input:focus {
   outline: none;
   border-color: lightblue;
 }
-
 input::placeholder {
   color: #666;
 }
-
 .sign-in-btn {
   width: 100%;
   padding: 12px;
@@ -139,11 +127,9 @@ input::placeholder {
   cursor: pointer;
   margin: 20px 0;
 }
-
 .sign-in-btn:hover {
   background-color: lightcyan;
 }
-
 .forgot-link {
   display: block;
   text-align: center;
@@ -152,18 +138,15 @@ input::placeholder {
   font-size: 14px;
   margin-bottom: 20px;
 }
-
 .forgot-link:hover {
   text-decoration: underline;
 }
-
 .create-account {
   text-align: center;
   border-top: 1px solid #3d3d3d;
   padding-top: 20px;
   margin-top: 20px;
 }
-
 .create-account a {
   display: inline-block;
   color: white;
@@ -173,101 +156,62 @@ input::placeholder {
   border-radius: 4px;
   font-size: 14px;
 }
-
 .create-account a:hover {
   background-color: lightblue;
   color: black;
 }
-
 footer {
-  position: relative;
-  bottom: 0;
-  right: 0;
-  left: 200px;
+  margin-top: auto;
   background: black;
   color: #3d3d3d;
   text-align: center;
   padding: 15px;
-  font-size: 12px;
+  margin-left: 220px;
+  flex-shrink: 0;
 }
-/* Chat GPT hulp voor de responsiviteit */
 
-@media (max-width: 768px) {
+/*Responsive: Door Chat-GPT, voor tablets en mobiele devices*/
+
+@media (max-width: 1024px) {
+  .login-wrapper {
+      margin-left: 180px;
+      padding: 10px;
+  }
   .navigatie {
       width: 180px;
   }
-  
-  .banner,
-  .container {
+  footer {
       margin-left: 180px;
   }
-  
-  footer {
-      left: 180px;
-  }
-  
-  .title h1 {
-      font-size: 2rem;
-  }
-}
-@media (max-width: 1024px) {
-  .login-wrapper {
-    margin-left: 180px;
-    padding: 10px;
-  }
-
-  .navigatie {
-    width: 180px;
-  }
-
-  footer {
-    left: 180px;
-  }
-
   .login-container {
-    padding: 20px;
+      padding: 20px;
   }
 }
-
 @media (max-width: 768px) {
   .navigatie {
-    width: 150px;
+      position: static;
+      width: 100%;
+      height: auto;
   }
-
   .login-wrapper {
-    margin-left: 150px;
-    padding: 10px;
+      margin-left: 0;
+      padding: 10px;
   }
-
   footer {
-    left: 150px;
+      margin-left: 0;
+  }
+  .dropdown-content {
+      position: static;
+      width: 100%;
   }
 }
-
 @media (max-width: 480px) {
-  .navigatie {
-    position: static;
-    width: 100%;
-    height: auto;
-  }
-
-  .login-wrapper {
-    margin-left: 0;
-    padding: 10px;
-  }
-
   .login-container {
-    max-width: 300px;
-    padding: 15px;
+      max-width: 300px;
+      padding: 15px;
   }
-
-  footer {
-    position: relative;
-    left: 0;
-  }
-
-  .dropdown-content {
-    position: static;
-    width: 100%;
+  .create-account a {
+      width: 100%;
+      box-sizing: border-box;
   }
 }

@@ -1,3 +1,7 @@
+html {
+  height: 100%;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   font-size: large;
@@ -5,11 +9,18 @@ body {
   color: #f4f4f4;
   background-color: #1c1c1c;
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 h1, h2 {
   font-family: 'Playfair Display', serif;
   color: lightblue;
+}
+
+main {
+  flex: 1 0 auto; /*groeit zonder extra rumte te nemen*/
 }
 
 .navigatie {
@@ -69,43 +80,12 @@ h1, h2 {
   display: block;
 }
 
-.search-bar {
-  padding: 15px;
-  border-bottom: 1px solid #3d3d3d;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.search-bar input,
-.search-bar button {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.search-bar input {
-  padding: 8px;
-  background: #111;
-  border: 1px solid #3d3d3d;
-  border-radius: 4px;
-  color: #f4f4f4;
-}
-
-.search-bar button {
-  padding: 8px;
-  background: lightblue;
-  border: none;
-  border-radius: 4px;
-  color: #111;
-  cursor: pointer;
-  font-weight: bold;
-}
-
 .banner {
   margin-left: 220px;
   background: #111;
   padding: 20px;
   text-align: center;
+  width: auto;
 }
 
 .admin-title h1 {
@@ -115,9 +95,10 @@ h1, h2 {
 }
 
 .container {
-  margin: 40px auto;
+  margin-left: 220px;
   padding: 20px;
   max-width: 1200px;
+  width: auto;
 }
 
 section {
@@ -199,7 +180,7 @@ textarea:focus {
 .cast-list,
 .related-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); /*Twee gelijke kolommen worden verdeeld in 1fr, fr is eenheid van de beschikbare ruimte*/
   gap: 15px;
 }
 
@@ -242,101 +223,135 @@ textarea:focus {
 }
 
 footer {
-  position: relative;
-  bottom: 0;
-  right: 0;
-  left: 200px;
+  margin-top: auto;
   background: #111;
   color: #3d3d3d;
   text-align: center;
   padding: 15px;
-  font-size: 12px;
+  margin-left: 220px;
+  flex-shrink: 0;
 }
+
+
+/*Responsive: Door Chat-GPT, voor tablets en mobiele devices*/
 
 @media (max-width: 1024px) {
   .container {
-    max-width: calc(100% - 200px);
+    
+    margin-left: 180px;
+    padding-left: 5%;
+    max-width: 900px;
   }
 
   .cast-list,
   .related-list {
-    grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
+  }
+  
+  .navigatie {
+      width: 180px;
+  }
+  
+  .banner,
+  .container,
+  footer {
+      margin-left: 180px;
   }
 }
 
 @media (max-width: 768px) {
   .navigatie {
-    width: 180px;
+      position: static;
+      width: 100%;
+      height: auto;
   }
 
   .banner,
-  .container {
-    margin-left: 180px;
-  }
-
+  .container,
   footer {
-    left: 180px;
+      margin-left: 0;
+      width: 100%;
   }
 
   h1, h2 {
-    font-size: 1.5rem;
+      font-size: 1.5em;
+  }
+  
+  .dropdown-content {
+      position: static;
+      width: 100%;
+  }
+
+  main {
+      width: 100%;
+      padding: 0;
+  }
+
+  section {
+      margin: 20px;
+  }
+
+  .container {
+      padding: 0;
+  }
+
+  body {
+      overflow-x: hidden;
   }
 }
 
 @media (max-width: 480px) {
-  .navigatie {
-    position: static;
-    width: 100%;
-    height: auto;
-    box-shadow: none;
-  }
-
-  .banner,
   .container {
-    margin-left: 0;
+      padding: 0;
+      margin: 0;
+      width: 100%;
   }
 
-  footer {
-    position: relative;
-    left: 0;
-  }
-
-  .dropdown-content {
-    position: static;
-    width: 100%;
+  section {
+      margin: 10px;
+      padding: 15px;
   }
 
   .form-actions {
-    flex-direction: column;
-    gap: 10px;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
   }
 
-  button,
-  input {
-    font-size: 1rem;
-    padding: 10px;
+  .save-btn,
+  .cancel-btn {
+      width: 100%;
+      margin: 5px 0;
   }
 
   .cast-list,
   .related-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .banner {
+      padding: 10px;
+  }
+
+  .form-group {
+      padding: 0 5px;
   }
 }
 
 @media (max-width: 360px) {
   body {
-    font-size: medium;
+      font-size: medium;
   }
 
   h1, h2 {
-    font-size: 1.2rem;
+      font-size: 1.2em;
   }
 
   .save-btn,
   .cancel-btn {
-    padding: 8px 15px;
-    font-size: 0.8em;
+      padding: 8px 15px;
+      font-size: 0.8em;
   }
 }

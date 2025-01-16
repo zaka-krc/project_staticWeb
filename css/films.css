@@ -1,4 +1,5 @@
 body {
+  font-size: large;
   margin: 0;
   font-family: 'Roboto', sans-serif;
   color: #f4f4f4;
@@ -8,17 +9,17 @@ body {
 
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
-  color: #fff;
+  color: lightblue;
   margin-top: 0;
 }
 
 a {
-  color: #f39c12;
+  color: lightblue;
   text-decoration: none;
 }
 
 a:hover {
-  color: #f1c40f;
+  color: lightskyblue;
 }
 
 .navigatie {
@@ -58,14 +59,14 @@ a:hover {
 }
 
 .navigatie a:hover {
-  background: #f39c12;
+  background: lightblue;
   color: #111;
   padding-left: 1.5em;
 }
 
 .dropdown-content {
   display: none;
-  background-color: #222;
+  background-color: #111;
   min-width: 200px;
   position: absolute;
   left: 100%;
@@ -76,18 +77,17 @@ a:hover {
 .dropdown-content a {
   padding: 1em 1.5em;
   font-size: 0.9em;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #3d3d3d;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-
 .banner {
   position: relative;
   height: 300px;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  background: #111;
   background-size: cover;
   background-position: center;
   margin-left: 220px;
@@ -114,7 +114,7 @@ a:hover {
 }
 
 .star {
-  color: #f39c12;
+  color: rgb(246, 246, 186);
   margin-right: 0.5rem;
 }
 
@@ -122,11 +122,10 @@ a:hover {
   max-width: 1200px;
   margin: 40px auto;
   padding: 0 30px;
-  margin-left: 260px;
 }
 
 section {
-  background: #222;
+  background: #2a2a2a;
   padding: 30px;
   margin-bottom: 40px;
   border-radius: 8px;
@@ -134,8 +133,8 @@ section {
 }
 
 section h2 {
-  color: #f39c12;
-  border-bottom: 2px solid #444;
+  color: lightblue;
+  border-bottom: 2px solid #3d3d3d;
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
@@ -149,13 +148,6 @@ section ul li {
   margin-bottom: 15px;
   padding-left: 20px;
   position: relative;
-}
-
-section ul li::before {
-  content: "•";
-  color: #f39c12;
-  position: absolute;
-  left: 0;
 }
 
 .video-container {
@@ -175,7 +167,7 @@ section ul li::before {
 }
 
 .review-content {
-  background: #2a2a2a;
+  background: #3d3d3d;
   padding: 25px;
   border-radius: 6px;
 }
@@ -189,7 +181,7 @@ section ul li::before {
 .review-score {
   font-size: 2rem;
   font-weight: bold;
-  color: #f39c12;
+  color: lightblue;
   margin-right: 20px;
   padding: 10px 20px;
   background: #111;
@@ -199,6 +191,7 @@ section ul li::before {
 .review-header h3 {
   margin: 0;
   font-size: 1.8rem;
+  display: flex;
 }
 
 .related-films ul {
@@ -216,23 +209,21 @@ section ul li::before {
 }
 
 .related-films li:hover {
-  background: #333;
-  box-shadow: 0 4px 15px rgba(243, 156, 18, 0.2);
+  background: #3d3d3d;
+  box-shadow: 0 4px 15px rgba(173, 216, 230, 0.2);
 }
 
 footer {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  left: 200px;
   background: #111;
-  color: #888;
+  color: #3d3d3d;
   text-align: center;
-  padding: 25px;
-  margin-left: 220px;
-  border-top: 2px solid #333;
-}
-
-@media (max-width: 1024px) {
-  .container {
-      margin-left: 240px;
-  }
+  padding: 15px;
+  font-size: 12px;
+  width: auto;
 }
 
 @media (max-width: 768px) {
@@ -240,20 +231,17 @@ footer {
       width: 180px;
   }
   
+  .banner,
   .container {
-      margin-left: 200px;
-  }
-  
-  .banner {
       margin-left: 180px;
-  }
-  
-  .title h1 {
-      font-size: 2.8rem;
   }
   
   footer {
-      margin-left: 180px;
+      left: 180px;
+  }
+  
+  .title h1 {
+      font-size: 2rem;
   }
 }
 
@@ -264,26 +252,23 @@ footer {
       height: auto;
   }
   
-  .container,
   .banner,
-  footer {
+  .container {
       margin-left: 0;
   }
   
-  .title h1 {
-      font-size: 2.2rem;
+  footer {
+      position: relative;
+      left: 0;
   }
   
-  section {
-      padding: 20px;
+  .dropdown-content {
+      position: static;
+      width: 100%;
   }
   
-  .review-header {
-      flex-direction: column;
-      text-align: center;
-  }
-  
-  .review-score {
-      margin: 0 0 15px 0;
+  .actions {
+      display: flex;
+      gap: 5px;
   }
 }

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Add New Movie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/addmovie.css">
+</head>
+<body>
+    <header>
+        <nav class="navigatie">
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Movies</a>
+                    <div class="dropdown-content">
+                        <a href="la-la-land.html">La La Land</a>
+                        <a href="drive-my-car.html">Drive My Car</a>
+                        <a href="star-wars-5.html">Star Wars: Episode V</a>
+                    </div>
+                </li>
+                <li><a href="login.html">Log in</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="banner">
+        <div class="admin-title">
+            <h1>Add New Movie</h1>
+        </div>
+    </div>
+
+    <main class="container">
+        <form class="admin-form" method="POST">
+            <section class="film-info">
+                <h2>General Info</h2>
+                <div class="form-group">
+                    <label for="title">Movie Title:</label>
+                    <input type="text" id="title" name="title" required placeholder="Enter movie title">
+                </div>
+                <div class="form-group">
+                    <label for="director">Director:</label>
+                    <input type="text" id="director" name="director" required placeholder="Enter director name">
+                </div>
+                <div class="form-group">
+                    <label for="release-date">Release Date:</label>
+                    <input type="date" id="release-date" name="release-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="duration">Duration:</label>
+                    <input type="text" id="duration" name="duration" placeholder="e.g., 2h 30min">
+                </div>
+                <div class="form-group">
+                    <label for="genres">Genres:</label>
+                    <input type="text" id="genres" name="genres" placeholder="e.g., Drama, Action, Comedy">
+                </div>
+                <div class="form-group">
+                    <label for="rating">IMDB Rating:</label>
+                    <input type="text" id="rating" name="rating" placeholder="e.g., 8.5/10">
+                </div>
+            </section>
+
+            <section class="trailer">
+                <h2>Trailer</h2>
+                <div class="form-group">
+                    <label for="trailer-url">YouTube Embed Link:</label>
+                    <input type="url" id="trailer-url" name="trailer-url" placeholder="https://www.youtube.com/embed/...">
+                </div>
+                <div class="video-preview">
+                    <p class="placeholder-text">Trailer preview will appear here</p>
+                </div>
+            </section>
+
+            <section class="summary">
+                <h2>Summary</h2>
+                <div class="form-group">
+                    <textarea id="summary-text" name="summary-text" rows="6" placeholder="Enter movie summary..."></textarea>
+                </div>
+            </section>
+
+            <section class="top-cast">
+                <h2>Top Cast</h2>
+                <div class="cast-list">
+                    <div class="form-group">
+                        <label for="cast1">Lead Actor 1:</label>
+                        <input type="text" id="cast1" name="cast1" placeholder="Actor name as Character">
+                    </div>
+                    <div class="form-group">
+                        <label for="cast2">Lead Actor 2:</label>
+                        <input type="text" id="cast2" name="cast2" placeholder="Actor name as Character">
+                    </div>
+                    <div class="form-group">
+                        <label for="cast3">Supporting Actor 1:</label>
+                        <input type="text" id="cast3" name="cast3" placeholder="Actor name as Character">
+                    </div>
+                    <div class="form-group">
+                        <label for="cast4">Supporting Actor 2:</label>
+                        <input type="text" id="cast4" name="cast4" placeholder="Actor name as Character">
+                    </div>
+                </div>
+            </section>
+
+            <section class="related-films">
+                <h2>Related Movies</h2>
+                <div class="related-list">
+                    <div class="form-group">
+                        <label for="related1">Related Movie 1:</label>
+                        <input type="text" id="related1" name="related1" placeholder="Enter movie title">
+                    </div>
+                    <div class="form-group">
+                        <label for="related2">Related Movie 2:</label>
+                        <input type="text" id="related2" name="related2" placeholder="Enter movie title">
+                    </div>
+                    <div class="form-group">
+                        <label for="related3">Related Movie 3:</label>
+                        <input type="text" id="related3" name="related3" placeholder="Enter movie title">
+                    </div>
+                    <div class="form-group">
+                        <label for="related4">Related Movie 4:</label>
+                        <input type="text" id="related4" name="related4" placeholder="Enter movie title">
+                    </div>
+                </div>
+            </section>
+
+            <div class="form-actions">
+                <button type="submit" class="save-btn">Add Movie</button>
+                <button type="button" class="cancel-btn" onclick="window.location.href='homepage.html'">Cancel</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 All rights are reserved for their respective owners.</p>
+    </footer>
+</body>
+</html>

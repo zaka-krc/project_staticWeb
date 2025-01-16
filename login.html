@@ -8,17 +8,26 @@
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <nav class="navigatie">
-        <ul>
-            <li><a href="homepage.html">HOME</a></li>
-            <li><a href="#" class="active">MOVIES</a></li>
-            <li><a href="#">ABOUT</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav class="navigatie">
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Movies</a>
+                    <div class="dropdown-content">
+                        <a href="la-la-land.html">La La Land</a>
+                        <a href="drive-my-car.html">Drive My Car</a>
+                        <a href="star-wars-5.html">Star Wars: Episode V</a>
+                    </div>
+                </li>
+                <li><a href="login.html">Log in</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main class="login-wrapper">
         <div class="login-container">
-            <h1>Login</h1>
+            <h1>Log in</h1>
             <form class="login-form">
                 <div class="form-field">
                     <label for="username">Username</label>
@@ -30,8 +39,10 @@
                     <input type="password" id="password" name="password" placeholder="Enter your password">
                 </div>
 
-                <button type="submit" class="sign-in-btn">Sign In</button>
-
+                <a href="panel.html">
+                    <button type="button" class="sign-in-btn">Sign In</button>
+                  </a>
+                  
                 <a href="#" class="forgot-link">Forgot your password?</a>
 
                 <div class="create-account">
@@ -42,7 +53,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Film Reviews</p>
+        <p>&copy; 2025 All rights are reserved for their respective owners.</p>
     </footer>
 </body>
 </html>
